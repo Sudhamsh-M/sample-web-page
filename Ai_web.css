@@ -1,0 +1,370 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #a0d9ff;
+}
+
+/* Section Styles */
+section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+/* Home Section */
+#home {
+    text-align: center;
+    background-color: #e0f2f7;
+    padding: 100px 20px;
+}
+
+#home h1 {
+    color: #003366;
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+#home p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Cards Section (horizontal deck) */
+.event-deck-wrapper {
+    position: relative;
+    margin-top: 30px;
+}
+
+.event-cards {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+.event-cards::-webkit-scrollbar { display: none; }
+
+.event-cards .card {
+    flex: 0 0 320px;
+    min-width: 240px;
+    max-width: 360px;
+    background: transparent; /* inner surfaces provide background */
+    padding: 0;
+    border-radius: 12px;
+    perspective: 1200px;
+    scroll-snap-align: center;
+}
+
+/* card inner 3D container */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+    transform-style: preserve-3d;
+    transition: transform 0.65s cubic-bezier(.2,.8,.2,1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* front/back faces */
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-front {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.know-more {
+    display: none; /* shown on touch/smaller screens */
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0056b3;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card-back {
+    background-color: #ffffff;
+    border: 1px solid #d8e7ff;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+/* Flip state */
+.card { cursor: pointer; }
+@media (hover: hover) {
+    .card:hover .card-inner {
+        transform: rotateY(180deg);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+}
+
+.card.is-flipped .card-inner { transform: rotateY(180deg); box-shadow: 0 12px 30px rgba(0,0,0,0.18); }
+
+.card-front h3 { color: #0056b3; margin: 0; font-size: 1.1rem; text-align: center; }
+.card-back p { font-size: 0.95em; color: #333; margin-bottom: 12px; }
+
+.register-btn { background: #0056b3; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+
+/* focus styles for keyboard users */
+.card:focus { outline: 3px solid rgba(160,217,255,0.6); outline-offset: 6px; }
+
+@media (max-width: 768px) {
+    .event-cards { gap: 16px; padding: 16px; }
+    .event-cards .card { flex: 0 0 80%; min-width: 70%; max-width: 85%; border-radius: 10px; }
+    .card-inner { height: 240px; }
+    /* hide deck nav on small screens to avoid overlap */
+    .deck-nav { width: 40px; height: 40px; display: none; }
+
+    /* show Know more button on mobile and position it as full-width control */
+    .know-more {
+        display: inline-block;
+        width: calc(100% - 32px);
+        left: 16px;
+        transform: none;
+        bottom: 14px;
+        font-size: 0.95rem;
+        padding: 10px 14px;
+    }
+
+    /* Ensure front has space for the button */
+    .card-front { padding-bottom: 56px; }
+
+    /* Put register button at the bottom of the back face and make it full-width */
+    .card-back {
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card-back p { margin-bottom: 12px; }
+    .register-btn { width: 100%; max-width: none; padding: 12px 16px; }
+
+    @media (hover: none) {
+        .card:hover .card-inner { transform: none; }
+    }
+}
+
+/* Deck navigation buttons */
+.deck-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.deck-prev { left: 10px; }
+.deck-next { right: 10px; }
+.deck-nav:hover { background: rgba(0,0,0,0.75); transform: translateY(-50%) scale(1.05); }
+
+@media (max-width: 768px) {
+    .event-cards { gap: 16px; padding: 16px; }
+    .event-cards .card { flex: 0 0 80%; min-width: 70%; max-width: 85%; border-radius: 10px; }
+    .deck-nav { width: 40px; height: 40px; }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #a0d9ff;
+}
+
+/* Mobile & responsive enhancements */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+    position: relative;
+}
+.nav-toggle span {
+    display: block;
+    height: 3px;
+    background: white;
+    margin: 6px 0;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px;
+    }
+    .nav-toggle {
+        display: inline-block;
+    }
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin: 10px 0 0 0;
+        background: transparent;
+        padding: 0;
+    }
+    header nav ul.open {
+        display: flex;
+    }
+    header nav ul li {
+        margin: 12px 0;
+    }
+
+    /* Hero adjustments */
+    #home {
+        padding: 40px 16px;
+    }
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    /* Keep deck horizontal but allow swipe on mobile */
+    .event-cards {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        padding: 12px 0;
+    }
+
+    /* Timeline and faculty */
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 16px;
+    }
+    .faculty-info {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    .faculty-card {
+        width: 100%;
+        max-width: 340px;
+        margin-bottom: 16px;
+    }
+
+    /* Footer icons */
+    footer .social-links {
+        display:flex;
+        justify-content:center;
+        gap: 12px;
+        flex-wrap:wrap;
+    }
+
+    /* Form inputs full width */
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Active nav open state for animated hamburger */
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
