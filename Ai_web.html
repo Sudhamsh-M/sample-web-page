@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Week - Innovate. Explore. Connect.</title>
+    <link rel="stylesheet" href="ai_web.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AI Week</div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#pass-generator">Get Your Pass</a></li>
+                <li><a href="#attendance">Attendance</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>AI Week: Innovate. Explore. Connect.</h1>
+                <p>Dive deep into the world of Artificial Intelligence with a week full of workshops, talks, and challenges.</p>
+                <a href="#events" class="btn">Explore Events</a>
+            </div>
+        </section>
+
+        <section id="about" class="container">
+            <h2>About AI Week</h2>
+            <p>AI Week is a premier event dedicated to showcasing the latest advancements and applications in Artificial Intelligence. Join us for a series of engaging activities designed to inspire, educate, and connect AI enthusiasts, students, and professionals. Our major events include:</p>
+            <ul>
+                <li><strong>AI Hackathon:</strong> A 24-hour coding challenge to solve real-world problems using AI.</li>
+                <li><strong>Keynote Speeches:</strong> Insights from leading AI researchers and industry experts.</li>
+                <li><strong>Workshops:</strong> Hands-on sessions covering topics like Machine Learning, Deep Learning, and NLP.</li>
+                <li><strong>Project Showcase:</strong> An opportunity for students to present their innovative AI projects.</li>
+            </ul>
+        </section>
+        <section id="speakers" class="container">
+            <h2>Featured Speakers</h2>
+            <div class="speaker-grid">
+                <div class="speaker-card">
+                    <img src="https://via.placeholder.com/150" alt="Dr. Anya Sharma">
+                    <h3>Dr. Anya Sharma</h3>
+                    <p>Chief AI Scientist, TechCorp</p>
+                    <p class="speaker-bio">Dr. Sharma is a pioneer in explainable AI and has published numerous papers on ethical AI development.</p>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="speaker-card">
+                    <img src="https://via.placeholder.com/150" alt="Mr. David Lee">
+                    <h3>Mr. David Lee</h3>
+                    <p>Head of ML Engineering, InnovateAI</p>
+                    <p class="speaker-bio">David leads a team of machine learning engineers, focusing on scalable AI solutions for enterprise.</p>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="speaker-card">
+                    <img src="https://via.placeholder.com/150" alt="Dr. Elena Petrova">
+                    <h3>Dr. Elena Petrova</h3>
+                    <p>Research Fellow, Future Labs</p>
+                    <p class="speaker-bio">Dr. Petrova's research focuses on the intersection of AI and neuroscience, exploring brain-computer interfaces.</p>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="container">
+            <h2>Our Events</h2>
+            <div class="event-deck-wrapper">
+                <button class="deck-nav deck-prev" aria-label="Previous event">‹</button>
+                <div class="event-cards" tabindex="0" aria-label="Event cards" role="list">
+                    <div class="card" role="listitem" tabindex="0" aria-pressed="false">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>AI Hackathon</h3>
+                                <button class="know-more" aria-label="Know more">Know more</button>
+                            </div>
+                            <div class="card-back">
+                                <p>Team up and build innovative AI solutions. Prizes for the top teams!</p>
+                                <button class="register-btn" data-event="AI Hackathon">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" role="listitem" tabindex="0" aria-pressed="false">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Keynote: The Future of AI</h3>
+                                <button class="know-more" aria-label="Know more">Know more</button>
+                            </div>
+                            <div class="card-back">
+                                <p>Hear from Dr. Anya Sharma on the ethical implications and future trends of AI.</p>
+                                <button class="register-btn" data-event="Keynote: The Future of AI">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" role="listitem" tabindex="0" aria-pressed="false">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Workshop: Deep Learning Basics</h3>
+                                <button class="know-more" aria-label="Know more">Know more</button>
+                            </div>
+                            <div class="card-back">
+                                <p>A hands-on introduction to neural networks and deep learning frameworks.</p>
+                                <button class="register-btn" data-event="Workshop: Deep Learning Basics">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" role="listitem" tabindex="0" aria-pressed="false">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Project Showcase & Expo</h3>
+                                <button class="know-more" aria-label="Know more">Know more</button>
+                            </div>
+                            <div class="card-back">
+                                <p>Discover groundbreaking AI projects from our talented students.</p>
+                                <button class="register-btn" data-event="Project Showcase & Expo">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="deck-nav deck-next" aria-label="Next event">›</button>
+            </div>
+        </section>
+
+        <section id="timeline" class="container">
+            <h2>Event Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Monday, Oct 23rd</div>
+                    <div class="timeline-content">
+                        <h4>Opening Ceremony & Keynote</h4>
+                        <p>9:00 AM - 11:00 AM | Auditorium</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Tuesday, Oct 24th</div>
+                    <div class="timeline-content">
+                        <h4>AI Hackathon Begins</h4>
+                        <p>10:00 AM | Innovation Lab</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Wednesday, Oct 25th</div>
+                    <div class="timeline-content">
+                        <h4>Deep Learning Workshop</h4>
+                        <p>1:00 PM - 4:00 PM | Lab 301</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Thursday, Oct 26th</div>
+                    <div class="timeline-content">
+                        <h4>Project Showcase</h4>
+                        <p>10:00 AM - 2:00 PM | Exhibition Hall</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Friday, Oct 27th</div>
+                    <div class="timeline-content">
+                        <h4>Closing Ceremony & Awards</h4>
+                        <p>3:00 PM - 5:00 PM | Auditorium</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Optional: Calendar Integration -->
+            <!-- <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
+        </section>
+
+        <section id="pass-generator" class="container">
+            <h2>Generate Your Event Pass</h2>
+            <p>Select the events you wish to attend and generate your personalized pass.</p>
+            <form id="pass-form">
+                <label for="participant-name">Your Name:</label>
+                <input type="text" id="participant-name" required>
+                <label for="participant-email">Your Email:</label>
+                <input type="email" id="participant-email" required>
+                <fieldset>
+                    <legend>Select Events:</legend>
+                    <input type="checkbox" id="event1" name="selected-events" value="AI Hackathon">
+                    <label for="event1">AI Hackathon</label><br>
+                    <input type="checkbox" id="event2" name="selected-events" value="Keynote: The Future of AI">
+                    <label for="event2">Keynote: The Future of AI</label><br>
+                    <input type="checkbox" id="event3" name="selected-events" value="Workshop: Deep Learning Basics">
+                    <label for="event3">Workshop: Deep Learning Basics</label><br>
+                    <input type="checkbox" id="event4" name="selected-events" value="Project Showcase & Expo">
+                    <label for="event4">Project Showcase & Expo</label><br>
+                </fieldset>
+                <button type="submit" class="btn">Generate Pass</button>
+            </form>
+            <div id="generated-pass" class="pass-display" style="display: none;">
+                <h3>Your AI Week Pass</h3>
+                <p><strong>Name:</strong> <span id="pass-name"></span></p>
+                <p><strong>Email:</strong> <span id="pass-email"></span></p>
+                <p><strong>Attending:</strong> <span id="pass-events"></span></p>
+                <p>Please present this pass at the event registration desk.</p>
+            </div>
+        </section>
+
+        <section id="attendance" class="container">
+            <h2>Attendance Checklist for Certification</h2>
+            <p>Mark your attendance for each event to be eligible for your AI Week participation certificate.</p>
+            <form id="attendance-form">
+                <label for="attendance-email">Enter Your Registered Email:</label>
+                <input type="email" id="attendance-email" required>
+                <button type="submit" class="btn">Load My Events</button>
+            </form>
+            <div id="attendance-checklist" style="display: none;">
+                <h3>Your Registered Events:</h3>
+                <ul id="event-attendance-list">
+                    <!-- Events will be dynamically loaded here -->
+                </ul>
+                <button class="btn" onclick="saveAttendance()">Submit Attendance</button>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <h3>Event Coordinators</h3>
+                <p><strong>Ms. Priya Sharma</strong> - Lead Coordinator | <a href="mailto:priya.sharma@example.com">priya.sharma@example.com</a></p>
+                <p><strong>Mr. Rahul Singh</strong> - Technical Coordinator | <a href="mailto:rahul.singh@example.com">rahul.singh@example.com</a></p>
+            </div>
+            <div class="faculty-info">
+                <h3>Faculty Coordinators & HOD</h3>
+                <div class="faculty-card">
+                    <img src="https://via.placeholder.com/100" alt="Dr. Anjali Gupta">
+                    <h4>Dr. Anjali Gupta</h4>
+                    <p>Faculty Coordinator</p>
+                    <p>Professor, Dept. of AI</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="https://via.placeholder.com/100" alt="Prof. Vikram Reddy">
+                    <h4>Prof. Vikram Reddy</h4>
+                    <p>Faculty Coordinator</p>
+                    <p>Associate Professor, Dept. of AI</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="https://via.placeholder.com/100" alt="Dr. Suresh Kumar">
+                    <h4>Dr. Suresh Kumar</h4>
+                    <p>Head of Department (HOD)</p>
+                    <p>Dept. of Artificial Intelligence</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2023 AI Week. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
